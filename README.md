@@ -1,4 +1,4 @@
- 这是一个KBEngine服务端demos资产库
+在kbengine_demos_assets基础上扩展了一些功能
 ========
 
 ## 主要更新
