@@ -6,9 +6,12 @@
 	</Volatile>
 
 	<Interfaces>
-		<Interface>	GameObject		</Interface>
-		<Interface>	NPCObject		</Interface>
-		<Interface>	Motion			</Interface>
+		<Interface>			GameObject		</Interface>
+		<Interface>			State			</Interface>
+		<Interface>			Flags			</Interface>
+		<Interface>			NPCObject		</Interface>
+		<Interface>			Motion			</Interface>
+		<Interface>			AI				</Interface>
 	</Interfaces>
 
 	<Properties>

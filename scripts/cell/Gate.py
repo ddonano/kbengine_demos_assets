@@ -51,8 +51,8 @@ class Gate(KBEngine.Entity, GameObject):
 						(self.getScriptName(), self.id, entityEntering.getScriptName(), entityEntering.id, \
 						range_xz, range_y, controllerID, userarg))
 		
-		if self.uid == 40001003: # currspace - teleport
-			spaceData = d_spaces.datas.get(entityEntering.spaceUType)
+		if self.uid == '40001003': # currspace - teleport
+			spaceData = KBEngine.globalData["spaceSqlInit"].get(entityEntering.spaceUType)
 			entityEntering.teleport(None, spaceData["spawnPos"], tuple(self.direction))		
 		else:					 # teleport to xxspace
 			if entityEntering.spaceUType == 3:
@@ -60,7 +60,7 @@ class Gate(KBEngine.Entity, GameObject):
 			else:
 				gotoSpaceUType = 3
 			
-			spaceData = d_spaces.datas.get(gotoSpaceUType)
+			spaceData = KBEngine.globalData["spaceSqlInit"].get(gotoSpaceUType)
 			entityEntering.teleportSpace(gotoSpaceUType, spaceData["spawnPos"], tuple(self.direction), {})
 
 	def onLeaveTrap(self, entityLeaving, range_xz, range_y, controllerID, userarg):

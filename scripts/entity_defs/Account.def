@@ -48,6 +48,8 @@
 		<onRemoveAvatar>
 			<Arg>			DBID				</Arg>
 		</onRemoveAvatar>
+
+
 	</ClientMethods>
 
 	<BaseMethods>
@@ -61,6 +63,8 @@
 			<Utype>			10002				</Utype>
 			<Arg>			UINT8				</Arg>	<!-- roleType -->
 			<Arg>			UNICODE				</Arg>	<!-- name -->
+			<Arg>			UNICODE				</Arg>	<!-- avatarId -->
+			<Arg>			UNICODE				</Arg>	<!-- userId -->
 		</reqCreateAvatar>
 
 		<selectAvatarGame>
@@ -78,6 +82,8 @@
 			<Exposed/>
 			<Arg>			DBID				</Arg>	<!-- dbid --> 
 		</reqRemoveAvatarDBID>
+
+
 	</BaseMethods>
 
 	<CellMethods>

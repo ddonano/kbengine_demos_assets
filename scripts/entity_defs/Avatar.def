@@ -11,7 +11,7 @@
 			在高层建筑内寻路可能需要关闭优化，让服务器同步Y，这样才能精确计算上下层位置。
 			(不填默认为true)
 		-->
-		<optimized> true </optimized>
+		<optimized> false </optimized>
 	</Volatile>
 
 	<Interfaces>
@@ -56,7 +56,12 @@
 			<Flags>			CELL_PUBLIC_AND_OWN			</Flags>
 			<Persistent>	true		</Persistent>
 		</level>
-		
+		<avatarId>
+			<Type>			UNICODE		</Type>
+			<Flags>			ALL_CLIENTS	</Flags>
+			<Persistent>	true		</Persistent>
+			<DatabaseLength> 255			</DatabaseLength>
+		</avatarId>
 		<!--
 		<playerName>
 			<Type>			UNICODE		</Type>
@@ -77,6 +82,20 @@
 		<createCell>
 			<Arg>			ENTITYCALL	</Arg>
 		</createCell>
+        <updateAvatar>
+            <!-- http://www.kbengine.org/cn/docs/programming/entitydef.html
+				Utype参数是可选的
+				属性的自定义协议ID，如果客户端不使用KBE配套的SDK来开发，客户端需要开发跟KBE对接的协议,
+				开发者可以定义属性的ID便于识别，c++协议层使用一个uint16来描述，如果不定义ID则引擎会使用
+				自身规则所生成的协议ID, 这个ID必须所有def文件中唯一
+				Utype 定义规则:
+				最高位第一位:属性从5开始，方法从6开始:
+				二三位:文件名排序值  account.def 00  avatar.def 01  space.def 02 spaces.def 03
+				四五位: 递增值，从00开始
+			-->
+            <Utype>			60100		</Utype>
+			<Arg>			UNICODE				</Arg>	<!-- name -->
+		</updateAvatar>
 	</BaseMethods>
 
 	<CellMethods>
@@ -88,10 +107,33 @@
 		<jump>
 			<Exposed/>
 		</jump>
+
+        <reqAction>
+			<Exposed/>
+            <Arg>		UINT16	</Arg>
+			<Arg>		UNICODE	</Arg>
+		</reqAction>
+
+        <teleportSpaceCode>
+		    <Exposed/>
+			<Arg>		UNICODE	</Arg>
+			<Arg>		POSITION3D		</Arg>
+			<Arg>		DIRECTION3D		</Arg>
+			<Arg>		PYTHON			</Arg>
+		</teleportSpaceCode>
+
+        <reqUpdateAvatar>
+			<Exposed/>
+			<Arg>			UNICODE				</Arg>	<!-- name -->
+		</reqUpdateAvatar>
 	</CellMethods>
 
 	<ClientMethods>
-		<onJump>
+		<respAction>
+            <Arg>		UINT16	</Arg>
+            <Arg>		UNICODE	</Arg>
+		</respAction>
+        <onJump>
 		</onJump>
 	</ClientMethods>
 </root>

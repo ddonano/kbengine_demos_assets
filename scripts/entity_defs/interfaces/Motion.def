@@ -23,9 +23,15 @@
 	</Properties>
 
 	<CellMethods>
+		<changeMoveSpeed>
+			<Exposed/>
+			<Arg>			UINT8				</Arg>
+		</changeMoveSpeed>
+
 	</CellMethods>
 
 	<ClientMethods>
+
 	</ClientMethods>
 </root>
 

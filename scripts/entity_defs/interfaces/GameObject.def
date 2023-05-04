@@ -9,16 +9,15 @@
 		</name>
 
 		<uid>
-			<Type>			UINT32			</Type>
+			<Type>			UNICODE			</Type>
 			<Utype> 		41004			</Utype>
 			<Flags>			ALL_CLIENTS		</Flags>
-			<Default>		0			</Default>
 			<Persistent>		true			</Persistent>
 		</uid>
 
 		<dbid>
 			<Type>			DBID			</Type>
-			<Flags>			CELL_PUBLIC		</Flags>
+			<Flags>			ALL_CLIENTS		</Flags>
 			<Default>		0			</Default>
 			<Persistent>		true			</Persistent>
 		</dbid>
@@ -32,7 +31,7 @@
 		</utype>
 
 		<modelID>
-			<Type>			UINT32			</Type>
+			<Type>			UNICODE			</Type>
 			<Utype> 		41006			</Utype>
 			<Flags>			ALL_CLIENTS		</Flags>
 			<Default>		0			</Default>

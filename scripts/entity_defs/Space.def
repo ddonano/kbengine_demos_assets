@@ -50,9 +50,30 @@
 			<Arg>		ENTITYCALL		</Arg>
 		</onEnter>
 
-		<onLeave>
+		<destroyBy>
+			<Arg>		ENTITY_ID		</Arg>
+		</destroyBy>
+
+        <onLeave>
 			<Arg>		ENTITY_ID		</Arg>
 		</onLeave>
+
+        <updateEntityFromOms>
+		</updateEntityFromOms>
+
+		<destroySelf>
+		   <Utype>			60201		</Utype>
+		</destroySelf>
+
+        <delEntityFromOms>
+		</delEntityFromOms>
+
+        <onNpcCreateSuccess>
+            <Utype>			60200		</Utype>
+			<Arg>		ENTITY_ID		</Arg>
+			<Arg>		UINT32		</Arg> <!-- uid -->
+		</onNpcCreateSuccess>
+
 	</BaseMethods>
 
 	<CellMethods>
@@ -63,6 +84,10 @@
 		<onLeave>
 			<Arg>		ENTITY_ID		</Arg>
 		</onLeave>
+        <destroyBy>
+			<Arg>		ENTITY_ID		</Arg>
+		</destroyBy>
+
 	</CellMethods>
 </root>
 

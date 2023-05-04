@@ -1,0 +1,22 @@
+<root>
+	<Properties>
+	</Properties>
+
+	<ClientMethods>
+	</ClientMethods>
+
+	<BaseMethods>
+		<updatePlayer>
+          <!--更新有多少在线玩家的方法 -->
+			<Arg>   ENTITYCALL   </Arg>
+        </updatePlayer>
+		<addPlayer>
+			<Arg>   ENTITYCALL   </Arg>
+		</addPlayer>
+	
+</BaseMethods>
+
+	<CellMethods>
+	</CellMethods>
+
+</root>

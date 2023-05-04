@@ -42,6 +42,44 @@
 			<Arg>		ENTITYCALL		</Arg>
 			<Arg>		DBID			</Arg>
 		</onSpaceGetCell>
+
+        <updateEntityFromOms>
+			<Arg>		ENTITY_UTYPE	</Arg>
+		</updateEntityFromOms>
+
+        <delEntityFromOms>
+			<Arg>		ENTITY_UTYPE	</Arg>
+		</delEntityFromOms>
+
+        <clearSpacesEntityNum>
+            <!-- http://www.kbengine.org/cn/docs/programming/entitydef.html
+				Utype参数是可选的
+				属性的自定义协议ID，如果客户端不使用KBE配套的SDK来开发，客户端需要开发跟KBE对接的协议,
+				开发者可以定义属性的ID便于识别，c++协议层使用一个uint16来描述，如果不定义ID则引擎会使用
+				自身规则所生成的协议ID, 这个ID必须所有def文件中唯一
+				Utype 定义规则:
+				最高位第一位:属性从5开始，方法从6开始:
+				二三位:文件名排序值  account.def 00  avatar.def 01  space.def 02 spaces.def 03
+				四五位: 递增值,从00开始
+			-->
+            <Utype>			60300		</Utype>
+            <Arg>		ENTITY_ID		</Arg>
+            <Arg>		DBID		</Arg>
+            <Arg>		UINT32		</Arg>
+		</clearSpacesEntityNum>
+        <onNpcCreateSuccess>
+            <Utype>			60301		</Utype>
+			<Arg>		UINT32		</Arg> <!-- uid -->
+            <Arg>		DBID		</Arg> <!-- spaceKey -->
+            <Arg>		UINT32		</Arg> <!-- spaceUtype -->
+		</onNpcCreateSuccess>
+        <onNpcDelSuccess>
+            <Utype>			60302		</Utype>
+			<Arg>		UINT32		</Arg> <!-- uid -->
+            <Arg>		DBID		</Arg> <!-- spaceKey -->
+            <Arg>		UINT32		</Arg> <!-- spaceUtype -->
+		</onNpcDelSuccess>
+
 	</BaseMethods>
 
 	<CellMethods>

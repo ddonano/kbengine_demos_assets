@@ -31,6 +31,10 @@
 		<changeState>
 			<Arg>			ENTITY_STATE				</Arg>
 		</changeState>
+		<changeSubState>
+		    <Exposed/>
+			<Arg>			ENTITY_SUBSTATE				</Arg>
+		</changeSubState>
 	</CellMethods>
 
 	<ClientMethods>
