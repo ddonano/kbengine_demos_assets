@@ -16,6 +16,7 @@ echo KBE_ROOT = %KBE_ROOT%
 echo KBE_RES_PATH = %KBE_RES_PATH%
 echo KBE_BIN_PATH = %KBE_BIN_PATH%
 
+
 start "" "%KBE_BIN_PATH%/machine.exe" --cid=1000 --gus=1000 --hide=1
 start "" "%KBE_BIN_PATH%/logger.exe" --cid=2000 --gus=2000 --hide=1
 start "" "%KBE_BIN_PATH%/interfaces.exe" --cid=3000 --gus=3000 --hide=1
